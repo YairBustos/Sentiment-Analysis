@@ -28,4 +28,4 @@ df.reset_index(inplace=True)
 #print(df.tail()) 
 print(df.shape)                                                             #Print shape to make sure it worked well
 
-df.to_csv(r'C:\\YOUR PATH\\Raw_dataset.csv', header=True, index=True)  #Export df to csv file
+df.to_csv(r'Raw_dataset.csv', header=True, index=True)                      #Export df to csv file

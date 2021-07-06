@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Oct 21 13:17:46 2020
-
-@author: YairBustos
-"""
 import pandas as pd
 import numpy as np
 from sklearn import metrics
@@ -20,9 +14,9 @@ pd.set_option('display.max_rows', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_colwidth', None)
 
-file_name = 'Dataset_cleaned'
+file_name = 'clean_dataset'
 #Import CSV and create DataFrame
-df = pd.read_csv(r'C:\\YOUR PATH\\' + file_name + '.csv')
+df = pd.read_csv(file_name + '.csv')
 
 #Models to be used
 models = {'Naive Bayes': MultinomialNB(),
@@ -98,9 +92,5 @@ for k in kfolds_list:
                 df_perf = df_perf.append(perf_list, ignore_index = True, sort=False)
 
 print(df_perf)
-df_perf.to_csv(r'C:\\YOUR PATH\\CV_performances.csv', header=True, index=True)
-
-
-
-
+df_perf.to_csv('CV_performances.csv', header=True, index=True)
 

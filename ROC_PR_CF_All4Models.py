@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Dec 22 22:02:11 2020
-
-@author: yairb
-"""
 from sklearn.svm import LinearSVC
 from sklearn.linear_model import SGDClassifier, LogisticRegression
 from sklearn.metrics import make_scorer, accuracy_score, precision_score, recall_score, f1_score, confusion_matrix, roc_curve, roc_auc_score, auc, precision_recall_curve
@@ -36,7 +30,7 @@ pd.set_option('display.max_rows', None)
 #########################
 #Import CSV and create DataFrame
 file_name = 'Dataset_Sentiment_cleaned'
-df = pd.read_csv(r'C:\\YOUR PATH\\' + file_name + '.csv')
+df = pd.read_csv(file_name + '.csv')
 #########################
 #Create Vector BoW using CountVectorizer
 counter = CountVectorizer()    
@@ -163,7 +157,7 @@ plt.close()
 #Import CSV and create DataFrame
 file_name2 = '2900_per_day_sentiment'
 #Create DataFrame with tweets and Sentiment Scores from TextBlob
-df2 = pd.read_csv(r'C:\\Users\\Yairb\\Desktop\\PythonPP\\Datasets\\' + file_name2 + '.csv')
+df2 = pd.read_csv(file_name2 + '.csv')
 
 #########################################
 #Clean Text

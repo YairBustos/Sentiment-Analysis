@@ -1,3 +1,5 @@
+#In order to compare the behaviour of the ML algorithms, 
+#both lemmatization and stemming processes are going to be tested
 
 import pandas as pd
 import re
@@ -35,7 +37,7 @@ df['text_no_contractions'] = df['text'].apply(lambda x: [contractions.fix(word) 
 #Convert tokenized column into strings
 df['text_str'] = [' '.join(map(str, each)) for each in df['text_no_contractions']]
 
-#Tokenize again
+#Tokenize again (due to first wrong tokenization process as a result of "contractions" library)
 df['tokenized_text'] = df['text_str'].apply(word_tokenize)
 
 #Remove stop words
@@ -73,4 +75,4 @@ WNL = WordNetLemmatizer()
 df['lemmatized_tokenized'] = df['wordnet_pos'].apply(lambda x: [WNL.lemmatize(word, tag) for word, tag in x])
 
 #Save to DF
-df.to_csv(r'C:\\YOUR PATH\\'+ file_name + '_cleaned.csv', header=True, index=True)
+df.to_csv(r'C:\\YOUR PATH\\'+ file_name + '_clean.csv', header=True, index=True)

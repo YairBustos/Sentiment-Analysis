@@ -1,20 +1,16 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Sep 29 15:22:28 2020
-
-@author: YairBustos
-"""
 
 import tweepy as tw
 import os
 import pandas as pd
 import sys
 
+#User login information
 consumer_key = 'YOUR DATA'
 consumer_secret = 'YOUR DATA'
 access_token = 'YOUR DATA'
 access_token_secret = 'YOUR DATA'
 
+#Create connection
 auth = tw.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tw.API(auth, wait_on_rate_limit=True)
@@ -49,6 +45,7 @@ user_locs = [[tweet.id,
               tweet.user.favourites_count] for tweet in tweets]
 #print(user_locs)
 
+#Create a df with the retrieved fields
 tweet_df = pd.DataFrame(data = user_locs, columns = ['id', 
                                                     'date', 
                                                     'text', 
@@ -61,8 +58,8 @@ tweet_df = pd.DataFrame(data = user_locs, columns = ['id',
                                                     'user_created_at', 
                                                     'user_listed_count', 
                                                     'user_favourites_count'])
-#print(tweet_df.head())
 
+#Save df as csv file
 tweet_df.to_csv(r'C:\YOUR PATH\Raw_dataset.csv', header=True, index=True)
 
 

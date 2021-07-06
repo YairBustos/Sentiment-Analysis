@@ -1,13 +1,7 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Dec 21 13:59:05 2020
 
-@author: yairb
-"""
 #Confusion Matrix Logistic Regression
 #Lemmatized Text
 #BoW
-
 from sklearn.metrics import make_scorer, accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 from sklearn.model_selection import train_test_split, StratifiedKFold, cross_val_predict
 from sklearn.naive_bayes import MultinomialNB
@@ -23,7 +17,7 @@ pd.set_option('display.max_rows', None)
 mlp.rcParams.update({'font.size': 22})
 file_name = 'Dataset_Sentiment_cleaned'
 #Import CSV and create DataFrame
-df = pd.read_csv(r'C:\\YOUR PATH\\' + file_name + '.csv')
+df = pd.read_csv('file_name + '.csv')
 
 #Using Stemmed Text
 #Vectorize using stemmed text
@@ -74,6 +68,5 @@ ax.set_yticklabels(ylabel, va='center')
 ax.set_title("Confusion Matrix Linear Regression")
 plt.xlabel('Actual Class', labelpad=10)
 plt.ylabel('Predicted Class', labelpad=10)
-
 
 plt.show()

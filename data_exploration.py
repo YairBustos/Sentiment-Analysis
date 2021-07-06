@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Nov  7 10:15:40 2020
-
-@author: Yair
-"""
 
 import matplotlib.pyplot as plt
 import seaborn as sns

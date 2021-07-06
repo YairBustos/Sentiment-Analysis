@@ -1,8 +1,6 @@
 
 import tweepy as tw
-import os
 import pandas as pd
-import sys
 
 #User login information
 consumer_key = 'YOUR DATA'
@@ -60,7 +58,7 @@ tweet_df = pd.DataFrame(data = user_locs, columns = ['id',
                                                     'user_favourites_count'])
 
 #Save df as csv file
-tweet_df.to_csv(r'C:\YOUR PATH\Raw_dataset.csv', header=True, index=True)
+tweet_df.to_csv(r'dataset.csv', header=True, index=True)
 
 
 
